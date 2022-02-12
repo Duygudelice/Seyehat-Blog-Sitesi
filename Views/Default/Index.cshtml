@@ -1,0 +1,147 @@
+﻿@using Seyehat.Models.siniflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        font-family: "Lato", sans-serif
+    }
+
+    .mySlides {
+        display: none
+    }
+</style>
+<body>
+
+   
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+        <div style="float:left; margin-top:120px;">
+            <h4 style=" text-align:right;">ÖZELLİKLER</h4>
+            <table style=" border-bottom-style: solid ;  margin-left:400px;width:60%; height:400px;">
+
+                <tr>
+                    <td><i class="fa fa-check"></i></td>
+                    <td>Restauranlar</td>
+
+                </tr>
+                <tr>
+                    <td><i class="fa fa-check"></i></td>
+                    <td>Uçuşlar</td>
+
+                </tr>
+                <tr>
+                    <td><i class="fa fa-check"></i></td>
+                    <td>Yapılacak Şeyler</td>
+
+
+                </tr>
+                <tr>
+                    <td><i class="fa fa-check"></i></td>
+                    <td>Araba Kiralama</td>
+
+
+                </tr>
+
+            </table>
+        </div>
+        <!-- Automatic Slideshow Images -->
+        @foreach (var x in Model)
+        {
+            <div class="mySlides w3-display-container w3-center">
+                <img style="margin-top: 40px; width: 50%; height:530px;" src="@x.BlogResim">
+                <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+
+                </div>
+            </div>
+        }
+     
+        <!-- The Band Section -->
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+            <h2 class="w3-wide">BENİM SEYEHAT BLOĞUM </h2>
+            <p class="w3-opacity"><i>Burası benim seyehat bloğum ben şu anda bu seyehat bloğunun kodlarını yazmaktayım çok eğlenceli ve ilgin bir ders aynı zamanda sağlıklı bir biçimde bittiğinde eminimki çok güzel bir site ortaya çıkcaka biraz zorlanoıyorum çünkü ilk defa gördüğüm kavramlar üzaerinde çalışıyorum umarım güzel bir site ve güzel bir yazı olmuştur.Umarım derslerdeki gibi uygulamları doğru bir şekilde yapıyorumdur.14 şubatta okullar açılıcak yani bu pazartesi 4 gün kaldı bahar dönemi bizi bekliyor ilk defa bahar dönemini okulda geçireceğim inşallah bir aksaklık çıkmazsaSağlıklı günler dilerim.</i></p>
+
+
+        </div>
+    </div>
+    @Html.Action("Partial1", "Default"); 
+       
+
+        <!-- Ticket Modal -->
+        <!--<div id="ticketModal" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+                <header class="w3-container w3-teal w3-center w3-padding-32">
+                    <span onclick="document.getElementById('ticketModal').style.display='none'"
+                          class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+                    <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+                </header>
+                <div class="w3-container">
+                    <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+                    <input class="w3-input w3-border" type="text" placeholder="How many?">
+                    <p><label><i class="fa fa-user"></i> Send To</label></p>
+                    <input class="w3-input w3-border" type="text" placeholder="Enter email">
+                    <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+                    <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+                    <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+                </div>
+            </div>
+        </div>-->
+    <div>
+  @Html.Action("Partial2", "Default");
+
+    @Html.Action("Partial3", "Default");
+
+   
+
+
+    <script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 4000);
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
+
+</body>
+</html>
+

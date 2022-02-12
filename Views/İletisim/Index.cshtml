@@ -1,0 +1,126 @@
+﻿@model Seyehat.Models.siniflar.İletisim
+    @{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Contact :: w3layouts</title>
+    <link href="/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/web/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <script type="text/javascript" src="/web/js/move-top.js"></script>
+    <script type="text/javascript" src="/web/js/easing.js"></script>
+    <!--/script-->
+    <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+    </script>
+    
+<!---->
+
+    <style>
+        .contact-details form input[type="text"], .contact-details textarea {
+            width: 47%;
+            margin-right: 4%;
+            padding: 12px;
+            border: 1px solid #E2E0ED;
+            font-size: 1em;
+            margin-bottom: 2em;
+            color: #C2C1CB;
+            background: #fff;
+            outline: none;
+            font-weight: 400;
+            font-family: 'Lato', sans-serif;
+            transition: 0.5s all ease;
+            -webkit-transition: 0.5s all ease;
+            -moz-transition: 0.5s all ease;
+            -o-transition: 0.5s all ease;
+            -ms-transition: 0.5s all ease;
+        }
+
+            .contact-details form input[type="text"]:hover, .contact-details textarea:hover {
+                border: 1px solid #00aeff;
+            }
+
+        .contact-details textarea {
+            resize: none;
+            height: 200px;
+            width: 98%;
+            margin-right: 0%;
+        }
+
+        .contact-details form input[type="text"]:nth-child(2), .contact-details form input[type="text"]:nth-child(4) {
+            margin-right: 0%;
+        }
+    </style>
+ 
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+     
+    </div>
+    <!--/header-->
+    <div style="margin-top:50px;" class="contact-content">
+        <div class="container">
+            <div class="contact-info">
+                <h2>İLETİŞİM</h2>
+                <p>Bir fincan kahve içmek için uğrayın veya bize bir mesaj bırakın</p>
+            </div>
+            @using (Html.BeginForm("MesajGonder", "İletisim", FormMethod.Post))
+            { 
+            <div class="contact-details">
+                <form>
+                    <input style=" width: 98%; margin-right: 4%; padding: 12px; border: 1px solid #E2E0ED; font-size: 1em; margin-bottom: 2em; color: #C2C1CB; background: #fff; outline: none; font-weight: 400; font-family: 'Lato', sans-serif; transition: 0.5s all ease; -webkit-transition: 0.5s all ease; -moz-transition: 0.5s all ease; -o-transition: 0.5s all ease; -ms-transition: 0.5s all ease;" type="text" placeholder="İsim" name="İsim" required />
+                    <input style="width: 98%; margin-right: 4%; padding: 12px; border: 1px solid #E2E0ED; font-size: 1em; margin-bottom: 2em; color: #C2C1CB; background: #fff; outline: none; font-weight: 400; font-family: 'Lato', sans-serif; transition: 0.5s all ease; -webkit-transition: 0.5s all ease; -moz-transition: 0.5s all ease; -o-transition: 0.5s all ease; -ms-transition: 0.5s all ease;" type="text" placeholder="Email" name="Mail" required />
+                    <input style="width: 98%; margin-right: 4%; padding: 12px; border: 1px solid #E2E0ED; font-size: 1em; margin-bottom: 2em; color: #C2C1CB; background: #fff; outline: none; font-weight: 400; font-family: 'Lato', sans-serif; transition: 0.5s all ease; -webkit-transition: 0.5s all ease; -moz-transition: 0.5s all ease; -o-transition: 0.5s all ease; -ms-transition: 0.5s all ease;" type="text" placeholder="Konu" name="Konu" required />
+
+                    <textarea style="  resize: none; height: 200px; width: 98%; margin-right: 0%;" placeholder="Mesaj" name="Mesaj"></textarea>
+                    <input style="font-weight: 400; color: #00aeff; outline: none; border: 1px solid #00aeff; font-size: 1em; padding: 0.6em 3em; background: transparent; font-family: 'Source Sans Pro', sans-serif; transition: 0.5s all; -webkit-transition: 0.5s all; -moz-transition: 0.5s all; -o-transition: 0.5s all; -ms-transition: 0.5s all;" type="submit" value="GÖNDER" />
+                </form>
+            </div>
+            }
+            <div class="contact-details">
+                <br />
+                <br />
+            
+                <div style="margin-left:-45px;" class="col-md-6 company_address">
+                    <h4>İletişim Bilgileri</h4>
+
+                    <p>Phone:(00) 222 666 444</p>
+                    <p>Fax: (000) 123 456 78 0</p>
+                    <p>Email: <a href="mailto:info@example.com">info@mycompany.com</a></p>
+                    <p>Follow on: <a href="#">İnstagram</a>, <a href="#">Twitter</a></p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <!---->
+ 
+
+

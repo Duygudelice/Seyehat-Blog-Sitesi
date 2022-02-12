@@ -1,0 +1,16 @@
+﻿@using Seyehat.Models.siniflar
+@model List<Blog>
+
+
+<div style="width:70%; margin-left:1000px; margin-top:-9000px;" class="row">
+    <div class="column">
+        @foreach (var x in Model)
+        {
+            <div class="content">
+                <a href="\Blog\BlogDetay\@x.ID"><img src="@x.BlogResim" alt="Mountains" style="width:100%; height:221px;"></a>
+
+                <p>@x.Aciklama.Substring(0, 120)...</p>
+            </div>
+        }
+    </div>
+</div>

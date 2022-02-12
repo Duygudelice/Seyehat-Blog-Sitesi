@@ -1,0 +1,33 @@
+﻿@using Seyehat.Models.siniflar
+@model List<İletisim>
+@{
+    ViewBag.Title = "İletişim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>BLOG LİSTESİ</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD SOYAD</th>
+        <th>MAİL</th>
+        <th>KONU</th>
+        <th>DETAYLAR</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+
+    <td>@x.ID</td>
+    <td>@x.İsim</td>
+    <td>@x.Mail</td>
+    <td>@x.Konu</td>
+
+    <td><a href="\Admin\MesajDetay\@x.ID" class="btn btn-default">DETAYLAR</a></td>
+
+</tr>
+    }
+
+</table>
+

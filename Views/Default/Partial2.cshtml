@@ -1,0 +1,33 @@
+﻿@using Seyehat.Models.siniflar
+@model List<Blog>
+
+
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body class="w3-container">
+
+
+
+    <div style="float: left;width:50%;" class="w3-panel w3-card w3-light-grey">
+        <h3 style="margin-left:158px;">POPÜLER 10 BLOG</h3>
+        <div class="w3-container w3-white">
+            <p>
+                <ul class="w3-ul w3-card-4" style="margin-left:130px; width:60%">
+
+                    @foreach (var x in Model)
+                    {
+                        <li><h4 style="text-decoration:underline; margin:8px; padding:5px;"><a href="\Blog\BlogDetay\@x.ID">@x.Baslik</a></h4></li>
+                    }
+
+                </ul>
+            </p>
+        </div>
+        <a href="\Blog\Index">Tamamını Gör</a>
+    </div>
+
+</body>
+</html>

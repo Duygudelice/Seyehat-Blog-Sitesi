@@ -1,0 +1,19 @@
+﻿@model Seyehat.Models.siniflar.Hakkımızda
+@{
+    ViewBag.Title = "Hakkımızdagetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımızda Yazısı Güncelleme</h2>
+
+@using (Html.BeginForm("HakkımızdaGüncelle", "Admin", FormMethod.Post))
+{
+
+
+    
+    @Html.TextAreaFor(x => x.yazi, new { @class = "form-control",style="height:400px;"})
+    <br />
+   
+    <button class="btn btn-warning">Bloğu Güncelle</button>
+}
+

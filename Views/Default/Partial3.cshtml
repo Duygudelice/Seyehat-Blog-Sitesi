@@ -1,0 +1,70 @@
+﻿@using Seyehat.Models.siniflar
+@model List<Blog>
+<style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+margin-top:-25px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+
+}
+</style>
+
+<div style="width:70%; margin-left:1000px;" class="row">
+    <div class="column">
+        @foreach(var x in Model) {
+        <div class="content">
+            <a href="\Blog\BlogDetay\@x.ID"><img src="@x.BlogResim" alt="Mountains" style="width:100%; height:221px;"></a>
+          
+            <p>@x.Aciklama.Substring(0,84)...</p>
+        </div>
+        }
+    </div>
+   </div>
+
+@Html.Action("Partial4", "Default")
